@@ -8,6 +8,7 @@ Stability   : stable
 Portability : PORTABLE
 
 This module provides two simple operators '?' and '?>' for simple conditions.
+Watch out for boolean blindness if you use them too often.
 -}
 
 module If where
