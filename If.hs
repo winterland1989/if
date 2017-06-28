@@ -31,7 +31,13 @@ import Control.Monad (when)
 infixr 1 ?
 {-# INLINABLE (?) #-}
 
--- This is just a prefix version of (?) for use in pointfree style.
+-- | This is just a prefix version of '?' for use in pointfree style.
+--
+-- @
+--   isFoo <- checkFoo
+--   if' isFoo foo bar
+-- @
+--
 if' :: Bool -> a -> a -> a
 if' True  x _ = x
 if' False _ y = y
