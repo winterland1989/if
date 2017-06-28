@@ -39,8 +39,7 @@ infixr 1 ?
 -- @
 --
 if' :: Bool -> a -> a -> a
-if' True  x _ = x
-if' False _ y = y
+if' = (?)
 {-# INLINABLE if' #-}
 
 -- | This is the <https://mail.haskell.org/pipermail/libraries/2014-April/022700.html whenM> operator,
