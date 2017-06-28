@@ -31,6 +31,12 @@ import Control.Monad (when)
 infixr 1 ?
 {-# INLINABLE (?) #-}
 
+-- This is just a prefix version of (?) for use in pointfree style.
+if' :: Bool -> a -> a -> a
+if' True  x _ = x
+if' False _ y = y
+{-# INLINABLE if' #-}
+
 -- | This is the <https://mail.haskell.org/pipermail/libraries/2014-April/022700.html whenM> operator,
 -- With it you can write @doesItExists ?> removeIt@ instead of @do {e <- doesItExists; when e removeIt}@.
 -- There's not @unlessM@ version, so you have to use 'not'.
