@@ -32,11 +32,11 @@ infixr 1 ?
 {-# INLINABLE (?) #-}
 
 -- | This is the <https://mail.haskell.org/pipermail/libraries/2014-April/022700.html whenM> operator,
--- With it you can write @doesItExists ?> removeIt@ instead of @do {e <- doesItExists; when e removeIt}@.
+-- With it you can write @doesItExist ?> removeIt@ instead of @do {e <- doesItExist when e removeIt}@.
 -- There's not @unlessM@ version, so you have to use 'not'.
 --
 -- @
---   not \<$\> doesItExists ?> createIt
+--   not \<$\> doesItExist ?> createIt
 -- @
 --
 (?>) :: Monad m => m Bool -> m () -> m ()
